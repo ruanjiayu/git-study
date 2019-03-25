@@ -403,3 +403,26 @@ origin的dev分支到本地）
 - pwd（linux命令）
 	
 		pwd 显示当前目录
+
+## 4、出现的情况
+- 当我们把不需要的文件加入暂存区的时候，如何撤回
+
+		git rm -r –-cached . (把所有暂存区内的文件删除) 或者删除指定文件目录 git rm -r --cached filePath
+		git add . (把工作区内的所有文件加入暂存区内，注意首先会读取gitignore内的数据将其忽略)
+		git commit -m "update.gitignore"
+
+
+- 创建gitignore文件，你需要安装插件
+
+
+- 当我们使用git pull时候出现
+- 
+		Git Pull Failed: refusing to merge unrelated histories
+		这是因为两个仓库有不同的开始点，也就是时候两个仓库没有共同的commit出现，git会认为这两个仓库可能不是同一个，为了防止错误提交，给了提示。
+		解决方案：
+		git pull -f origin master --allow-unrelated-histories
+		其中:–allow-unrelated-histories表示允许不相关历史合并,所以一旦出现了 merge unrelated histories 这样的错误，就在命令的后面添加 --allow-unrelated-histories
+
+
+
+
