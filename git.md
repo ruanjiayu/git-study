@@ -416,7 +416,7 @@ origin的dev分支到本地）
 
 
 - 当我们使用git pull时候出现
-- 
+
 		Git Pull Failed: refusing to merge unrelated histories
 		这是因为两个仓库有不同的开始点，也就是时候两个仓库没有共同的commit出现，git会认为这两个仓库可能不是同一个，为了防止错误提交，给了提示。
 		解决方案：
